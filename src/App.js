@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Recherche from './components/Recherche';
 import './App.css';
 /*
 function App() {
@@ -27,6 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Annuaire des administrations en Pays de la Loire</h1>
+        <Recherche />
       </div>
     );
   }
