@@ -39,6 +39,7 @@ class Recherche extends Component {
                 <Button primary onClick={() => this.props.onSearch(this.state.departement, this.state.type)}>Lancer la recherche</Button>
                 <Button secondary onClick={this.props.onEmpty}>Vider la recherche</Button>
             </div>
+
         );
     }
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Recherche from './components/Recherche';
 import './App.css';
-import { Message } from 'semantic-ui-react';
+import { Message, CardGroup } from 'semantic-ui-react';
+import Etablissement from './components/Etablissement';
 /*
 function App() {
   return (
@@ -59,6 +60,11 @@ class App extends Component {
         <h1>Annuaire des administrations en Pays de la Loire</h1>
         <Recherche onSearch={this.onSearch} onEmpty={this.onEmpty} />
         {this.state.error ? <Message warning>{this.state.error}</Message> : undefined}
+        <CardGroup>
+          <Etablissement></Etablissement>
+          <Etablissement></Etablissement>
+          <Etablissement></Etablissement>
+        </CardGroup>
       </div>
     );
   }
