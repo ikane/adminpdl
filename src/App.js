@@ -50,6 +50,12 @@ class App extends Component {
     }
   }
 
+  renderResults = () => {
+    return this.state.data.map((etablissement) => {
+      return <Etablissement key={etablissement.properties.id} properties={etablissement.properties} ></Etablissement >
+    });
+  }
+
   onEmpty = () => {
     this.setState({ data: [], error: '' });
   }
@@ -60,11 +66,12 @@ class App extends Component {
         <h1>Annuaire des administrations en Pays de la Loire</h1>
         <Recherche onSearch={this.onSearch} onEmpty={this.onEmpty} />
         {this.state.error ? <Message warning>{this.state.error}</Message> : undefined}
-        <CardGroup>
-          <Etablissement></Etablissement>
-          <Etablissement></Etablissement>
-          <Etablissement></Etablissement>
-        </CardGroup>
+        {this.state.data ?
+          <CardGroup>
+            {this.renderResults()}
+          </CardGroup>
+          : undefined
+        }
       </div>
     );
   }

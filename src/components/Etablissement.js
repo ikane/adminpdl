@@ -1,12 +1,15 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
 
-const Etablissement = () => {
+const Etablissement = ({ properties }) => {
+    //console.log(properties);
+    const { nom, telephone, email, url } = properties;
     return (
         <Card>
-            <Card.Header>Nom d'établissement</Card.Header>
-            <Card.Meta>Téléphone: 01.02.03.04.05</Card.Meta>
-            <Card.Meta>Email: abc@def.fr</Card.Meta>
+            <Card.Header>{nom}</Card.Header>
+            <Card.Meta>Téléphone: {telephone}</Card.Meta>
+            <Card.Meta>Email: {email}</Card.Meta>
+            <Card.Meta>Site: {url}</Card.Meta>
         </Card>
     );
 }
